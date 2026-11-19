@@ -54,13 +54,13 @@ A8-д `courseExists()`-ийн нийтлэг stub нь оюутан олдоог
 
 ## Мутацийн шалгалт
 
-Мутаци бүрийг эх хувилбарт тусад нь хийж тестийг ажиллуулаад, дараагийн мутациас өмнө кодыг сэргээсэн.
+Мутаци бүрийг эх хувилбарт тусад нь хийж тестийг ажиллуулаад, дараагийн мутациас өмнө кодыг сэргээсэн. Доорх логийг энэ компьютер дээр 2026-11-19-нд дахин үүсгэсэн.
 
-| Мутант | Түр хийсэн өөрчлөлт | Унасан тестүүд | Бодит үр дүн | Нотолгоо |
-| --- | --- | --- | --- | --- |
-| 1 | Идэвхгүй оюутны шалгалтыг хассан | A3 `register_inactiveStudent_returnsInactiveWithoutEmail`; A8 `register_invalidScenario_returnsExpectedError`-ийн 2 дахь мөр (`inactiveStudent`) | Tests run: 10, Failures: 2, Errors: 0, Skipped: 0; **BUILD FAILURE** | [Лог 1](results/mvn-test-mutant-1.txt) |
-| 2 | `saveRegistration()` дуудалтыг хассан | A1 `register_activeStudentWithPrerequisites_returnsOkAndSavesAndSendsEmail`; A5 `register_emailSenderThrows_returnsOkAndKeepsRegistration`; A7 `register_successfulRegistration_emailBodyContainsCourseCode` | Tests run: 10, Failures: 3, Errors: 0, Skipped: 0; **BUILD FAILURE** | [Лог 2](results/mvn-test-mutant-2.txt) |
-| 3 | Эхний `if`-ээс `courseId == null` шалгалтыг хассан | A6 `register_nullArgument_throwsBeforeUsingDependencies`-ийн `null courseId` баталгаа | Tests run: 10, Failures: 1, Errors: 0, Skipped: 0; **BUILD FAILURE** | [Лог 3](results/mvn-test-mutant-3.txt) |
+| Мутант | Түр хийсэн өөрчлөлт | Унасан тестүүд | Бодит үр дүн | Төлөв | Нотолгоо |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Идэвхгүй оюутны шалгалтыг хассан | A3 `register_inactiveStudent_returnsInactiveWithoutEmail`; A8 `register_invalidScenario_returnsExpectedError`-ийн 2 дахь мөр (`inactiveStudent`) | Tests run: 10, Failures: 2, Errors: 0, Skipped: 0; **BUILD FAILURE** | **Killed** | [Лог 1](results/mvn-test-mutant-1.txt) |
+| 2 | `saveRegistration()` дуудалтыг хассан | A1 `register_activeStudentWithPrerequisites_returnsOkAndSavesAndSendsEmail`; A5 `register_emailSenderThrows_returnsOkAndKeepsRegistration`; A7 `register_successfulRegistration_emailBodyContainsCourseCode` | Tests run: 10, Failures: 3, Errors: 0, Skipped: 0; **BUILD FAILURE** | **Killed** | [Лог 2](results/mvn-test-mutant-2.txt) |
+| 3 | Эхний `if`-ээс `courseId == null` шалгалтыг хассан | A6 `register_nullArgument_throwsBeforeUsingDependencies`-ийн `null courseId` баталгаа | Tests run: 10, Failures: 1, Errors: 0, Skipped: 0; **BUILD FAILURE** | **Killed** | [Лог 3](results/mvn-test-mutant-3.txt) |
 
 Гурван мутаци бүгд assertion болон `verify()`-ийн зөрчлөөр илэрсэн; `UnnecessaryStubbingException` зэрэг орчны алдаагаар унаагүй. Идэвхгүй оюутны хамгаалалт, хадгалалтын дуудлага, `courseId`-ийн шалгалтыг устгахад тус бүр өөр тест унасан нь эдгээр шаардлагыг тестүүд бодитоор шалгаж байгааг харуулсан.
 
